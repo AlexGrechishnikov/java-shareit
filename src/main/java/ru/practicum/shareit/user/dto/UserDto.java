@@ -1,30 +1,22 @@
-package ru.practicum.shareit.user;
+package ru.practicum.shareit.user.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+@AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@AllArgsConstructor
-public class User {
-
+public class UserDto {
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Поле не должно быть пустым или null")
     private String name;
 
-    @Email
     @NotBlank
-    @EqualsAndHashCode.Include
+    @Email
     private String email;
-
-    public User(Long userId) {
-        id = userId;
-    }
 }
