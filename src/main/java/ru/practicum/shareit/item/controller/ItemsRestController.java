@@ -1,4 +1,4 @@
-package ru.practicum.shareit.item;
+package ru.practicum.shareit.item.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/items")
 @RequiredArgsConstructor
-public class ItemRestController {
+public class ItemsRestController {
 
     private final ItemMapper itemMapper;
     private final ItemService itemService;
@@ -29,9 +29,11 @@ public class ItemRestController {
         return ResponseEntity.status(HttpStatus.CREATED).body(itemMapper.toDto(item));
     }
 
-    @PutMapping
-    public ResponseEntity<ItemDto> putItems(@RequestHeader("X-Sharer-User-Id") Long requestOwnerId,
-                                            @RequestBody ItemDto dto) {
+    @PatchMapping("/{itemId}")
+    public ResponseEntity<ItemDto> patchItems(@RequestHeader("X-Sharer-User-Id") Long requestOwnerId,
+                                              @RequestBody ItemDto dto,
+                                              @PathVariable Long itemId) {
+        dto.setId(itemId);
         Item item = itemMapper.toEntity(dto);
         item = itemService.update(item, requestOwnerId);
         return ResponseEntity.ok(itemMapper.toDto(item));

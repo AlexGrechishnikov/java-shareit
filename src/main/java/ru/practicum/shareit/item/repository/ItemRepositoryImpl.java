@@ -7,6 +7,7 @@ import ru.practicum.shareit.utill.exceptions.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -67,11 +68,14 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public List<Item> findAllByNameOrDescriptionPattern(String pattern) {
+        String lowerCasePattern = pattern.toLowerCase();
         Set<Item> itemListByName = list.stream()
-                .filter(item -> item.getName().contains(pattern))
+                .filter(Item::getAvailable)
+                .filter(item -> item.getName().toLowerCase().contains(lowerCasePattern))
                 .collect(Collectors.toSet());
         Set<Item> itemListByDescription = list.stream()
-                .filter(item -> item.getDescription().contains(pattern))
+                .filter(Item::getAvailable)
+                .filter(item -> item.getDescription().toLowerCase().contains(lowerCasePattern))
                 .collect(Collectors.toSet());
         itemListByName.addAll(itemListByDescription);
         return List.copyOf(itemListByName);

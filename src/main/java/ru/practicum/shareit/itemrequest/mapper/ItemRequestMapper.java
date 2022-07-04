@@ -1,7 +1,7 @@
 package ru.practicum.shareit.itemrequest.mapper;
 
 import org.springframework.stereotype.Component;
-import ru.practicum.shareit.itemrequest.ItemRequest;
+import ru.practicum.shareit.itemrequest.model.ItemRequest;
 import ru.practicum.shareit.itemrequest.dto.ItemRequestDto;
 import ru.practicum.shareit.utill.mapper.Mapper;
 

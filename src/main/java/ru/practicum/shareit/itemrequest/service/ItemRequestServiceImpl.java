@@ -1,7 +1,7 @@
 package ru.practicum.shareit.itemrequest.service;
 
 import org.springframework.stereotype.Component;
-import ru.practicum.shareit.itemrequest.ItemRequest;
+import ru.practicum.shareit.itemrequest.model.ItemRequest;
 
 @Component
 public class ItemRequestServiceImpl implements ItemRequestService {

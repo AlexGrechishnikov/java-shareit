@@ -1,4 +1,4 @@
-package ru.practicum.shareit.user;
+package ru.practicum.shareit.user.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.shareit.user.dto.UserDto;
 import ru.practicum.shareit.user.mapper.UserMapper;
+import ru.practicum.shareit.user.model.User;
 import ru.practicum.shareit.user.service.UserService;
 
 import javax.validation.Valid;
@@ -29,8 +30,10 @@ public class UsersRestController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userMapper.toDto(user));
     }
 
-    @PutMapping
-    public ResponseEntity<UserDto> putUsers(@RequestBody UserDto dto) {
+    @PatchMapping("/{userId}")
+    public ResponseEntity<UserDto> patchUsers(@RequestBody UserDto dto,
+                                              @PathVariable Long userId) {
+        dto.setId(userId);
         User user = userMapper.toEntity(dto);
         user = userService.update(user);
         return ResponseEntity.ok(userMapper.toDto(user));

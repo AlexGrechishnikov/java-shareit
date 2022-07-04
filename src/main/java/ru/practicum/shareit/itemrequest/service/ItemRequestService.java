@@ -1,6 +1,6 @@
 package ru.practicum.shareit.itemrequest.service;
 
-import ru.practicum.shareit.itemrequest.ItemRequest;
+import ru.practicum.shareit.itemrequest.model.ItemRequest;
 
 public interface ItemRequestService {
 

@@ -6,6 +6,7 @@ import ru.practicum.shareit.item.model.Item;
 import ru.practicum.shareit.item.repository.ItemRepository;
 import ru.practicum.shareit.utill.exceptions.AccessException;
 
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -61,6 +62,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> findAllByNameOrDescriptionPattern(String pattern) {
+        if (pattern.isBlank()) {
+            return Collections.emptyList();
+        }
         return itemRepository.findAllByNameOrDescriptionPattern(pattern);
     }
 }

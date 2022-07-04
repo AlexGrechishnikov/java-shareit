@@ -1,8 +1,8 @@
-package ru.practicum.shareit.itemrequest;
+package ru.practicum.shareit.itemrequest.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import ru.practicum.shareit.user.User;
+import ru.practicum.shareit.user.model.User;
 
 import java.time.LocalDateTime;
 
