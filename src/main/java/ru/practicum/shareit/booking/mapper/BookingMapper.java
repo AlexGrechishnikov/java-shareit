@@ -7,6 +7,7 @@ import ru.practicum.shareit.utill.mapper.Mapper;
 
 @Component
 public class BookingMapper implements Mapper<Booking, BookingDto> {
+
     @Override
     public BookingDto toDto(Booking entity) {
         return new BookingDto(

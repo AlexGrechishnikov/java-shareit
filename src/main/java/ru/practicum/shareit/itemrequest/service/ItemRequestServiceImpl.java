@@ -5,6 +5,7 @@ import ru.practicum.shareit.itemrequest.ItemRequest;
 
 @Component
 public class ItemRequestServiceImpl implements ItemRequestService {
+
     @Override
     public ItemRequest create(ItemRequest itemRequest) {
         return null;
