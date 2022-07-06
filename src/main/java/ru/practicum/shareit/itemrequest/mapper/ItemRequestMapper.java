@@ -5,6 +5,8 @@ import ru.practicum.shareit.itemrequest.model.ItemRequest;
 import ru.practicum.shareit.itemrequest.dto.ItemRequestDto;
 import ru.practicum.shareit.utill.mapper.Mapper;
 
+//TODO класс будет реализован в следующих спринтах
+
 @Component
 public class ItemRequestMapper implements Mapper<ItemRequest, ItemRequestDto> {
     @Override

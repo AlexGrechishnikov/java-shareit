@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+//TODO класс будет реализован в следующих спринтах
+
 @AllArgsConstructor
 @Getter
 @Setter

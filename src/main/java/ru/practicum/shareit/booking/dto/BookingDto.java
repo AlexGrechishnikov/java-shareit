@@ -7,6 +7,8 @@ import ru.practicum.shareit.booking.model.BookingStatus;
 
 import java.time.LocalDateTime;
 
+//TODO класс будет реализован в следующих спринтах
+
 @AllArgsConstructor
 @Getter
 @Setter

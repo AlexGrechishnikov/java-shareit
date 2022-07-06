@@ -5,6 +5,8 @@ import ru.practicum.shareit.booking.model.Booking;
 import ru.practicum.shareit.booking.dto.BookingDto;
 import ru.practicum.shareit.utill.mapper.Mapper;
 
+//TODO класс будет реализован в следующих спринтах
+
 @Component
 public class BookingMapper implements Mapper<Booking, BookingDto> {
 
